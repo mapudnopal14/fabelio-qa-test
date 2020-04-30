@@ -1,0 +1,6 @@
+{
+    "url_post": "http://httpbin.org/post",
+    "url_get": "http://httpbin.org/get",
+    "url_put": "http://httpbin.org/put",
+    "url_delete": "http://httpbin.org/delete"
+}

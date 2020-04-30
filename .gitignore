@@ -1,0 +1,18 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/reports
+
+# misc
+.DS_Store
+.env
+
+package-lock.json
+yarn.lock
+
+# qe test
+/cypress/node_modules
+/cypress/reports
+/cypress/screenshots
+/cypress/videos

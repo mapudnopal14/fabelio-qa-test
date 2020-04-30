@@ -1,0 +1,69 @@
+{
+  "name": "fabelio-qa-test",
+  "version": "1.0.0",
+  "description": "Fabelio Quality Assurance Test",
+  "main": "index.js",
+  "scripts": {
+    "test-windows": "node ./node_modules/mocha/bin/mocha ./automation_api/test  --recursive --reporter mochawesome --reporter-options reportDir=reports/mochawesome/ --timeout 180000",
+    "reports-api": "open 'reports/mochawesome/mochawesome.html'",
+    "clean-reports": "rm -rf cypress/reports/results/*.json cypress/reports/features cypress/reports/index.html",
+    "test-webui": "npm run clean-reports & ./node_modules/.bin/cypress-tags run --spec \"cypress/integration/*.feature\" --record --key 123-456-4c8b-9b7b-1234567890",
+    "cypress": "npm run clean-reports & ./node_modules/.bin/cypress-tags run --spec \"cypress/integration/*.feature\"",
+    "cypress-ui": "./node_modules/.bin/cypress open",
+    "reports": "node cypress/cypress_report.js",
+    "open-reports": "open 'cypress/reports/index.html'",
+    "clean": "rm -rf node_modules package-lock.json yarn.lock"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mapudnopal14/fabelio-qa-test.git"
+  },
+  "keywords": [],
+  "author": "NFL14",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mapudnopal14/fabelio-qa-test/issues"
+  },
+  "homepage": "https://github.com/mapudnopal14/fabelio-qa-test#readme",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-json-schema": "^1.5.1",
+    "cypress": "^4.5.0",
+    "cypress-cucumber-preprocessor": "^2.3.1",
+    "dotenv": "^8.2.0",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-config-standard": "^14.0.1",
+    "eslint-plugin-cypress": "^2.10.3",
+    "eslint-plugin-import": "^2.18.0",
+    "eslint-plugin-node": "^9.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.1.6",
+    "mocha": "^7.1.2",
+    "mochawesome": "^4.1.0",
+    "multiple-cucumber-html-reporter": "^1.16.1",
+    "mysql": "^2.18.1",
+    "supertest": "^3.1.0"
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": true,
+    "cucumberJson": {
+      "generate": true,
+      "outputFolder": "cypress/reports/results",
+      "filePrefix": "",
+      "fileSuffix": ".cucumber"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "./node_modules/.bin/eslint"
+    ]
+  }
+}
