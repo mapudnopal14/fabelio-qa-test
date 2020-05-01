@@ -4,6 +4,7 @@
   "description": "Fabelio Quality Assurance Test",
   "main": "index.js",
   "scripts": {
+    "test-api": "./node_modules/mocha/bin/mocha ./automation_api/test  --recursive --reporter mochawesome --reporter-options reportDir=reports/mochawesome/ --timeout 180000",
     "test-windows": "node ./node_modules/mocha/bin/mocha ./automation_api/test  --recursive --reporter mochawesome --reporter-options reportDir=reports/mochawesome/ --timeout 180000",
     "reports-api": "open 'reports/mochawesome/mochawesome.html'",
     "clean-reports": "rm -rf cypress/reports/results/*.json cypress/reports/features cypress/reports/index.html",
