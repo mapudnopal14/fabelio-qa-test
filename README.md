@@ -15,11 +15,11 @@ Answer number 8 is on file
 
 Answer number 9 , URL qa.fabelio.com
 i'm trying to use cypress X cucumber
--clone this repo
--npm install
--npm run cypress-ui
--choose this directory
--chose file fabelio.feature
+- clone this repo
+- npm install
+- npm run cypress-ui
+- choose this directory
+- chose file fabelio.feature
 
 fail to process because security issue (CORS)
 
