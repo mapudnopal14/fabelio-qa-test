@@ -16,7 +16,7 @@ require('dotenv').config()
 module.exports = (on, config) => {
   on('file:preprocessor', cucumber())
   config.env = config.env || {}
-  config.env.GOOGLE_URL = process.env.GOOGLE_URL
-  config.env.RALALI_WEB_URL = process.env.RALALI_WEB_URL
+  config.env.URL_QA = process.env.URL_QA
+  config.env.CORE_URL = process.env.CORE_URL
   return config
 }

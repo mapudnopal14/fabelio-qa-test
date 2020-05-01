@@ -12,7 +12,8 @@
     "cypress-ui": "./node_modules/.bin/cypress open",
     "reports": "node cypress/cypress_report.js",
     "open-reports": "open 'cypress/reports/index.html'",
-    "clean": "rm -rf node_modules package-lock.json yarn.lock"
+    "clean": "rm -rf node_modules package-lock.json yarn.lock",
+    "convertCSVtoJSON": "ts-node testData/convertCSVtoJSON.ts"
   },
   "repository": {
     "type": "git",
@@ -45,7 +46,10 @@
     "mochawesome": "^4.1.0",
     "multiple-cucumber-html-reporter": "^1.16.1",
     "mysql": "^2.18.1",
-    "supertest": "^3.1.0"
+    "supertest": "^3.1.0",
+    "@types/node": "12.12.29",
+    "papaparse": "5.1.1",
+    "@types/papaparse": "^5.0.1"
   },
   "cypress-cucumber-preprocessor": {
     "nonGlobalStepDefinitions": true,
